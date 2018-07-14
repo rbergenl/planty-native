@@ -5,6 +5,9 @@
 - Have an Expo client installed on an android device.
 - Have Genymotion installed
 
+## Node Project
+- Run `$ npm init --yes`
+
 ## Expo and React-Native
 - Add to `.gitignore` the line `.expo/*`
 - Add to `.babelrc` presets `babel-preset-expo`

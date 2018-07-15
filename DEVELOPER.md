@@ -28,38 +28,22 @@
 ```json
 {
   "expo": {
-    "name": "Planty",
-    "sdkVersion": "28.0.0"
+    "name": "Croppy",
+    "sdkVersion": "26.0.0"
   }
 }
 ```
-- Run on Cloud9: `$ exp login`, then `$ exp start --tunnel` (tunnel to be able to reach it through the internet, and will start bundler itself; wait until it said "dependency graph loaded", then scan the qr code with the Expo client on an android device).
+- Have `package.json` main point to `src/index.js`
+- Run `$ exp login`
+- Run on Cloud9: `$ exp start --tunnel` (tunnel to be able to reach it through the internet, and will start bundler itself; wait until it said "dependency graph loaded", then scan the qr code with the Expo client on an android device).
 - Run on laptop: `$ exp start`, start Genymotion device, then `$ exp android`.
-
-- Add to `.gitignore` the line `.expo/*`
-- Add to `.babelrc` presets `babel-preset-expo`
-
-## Bluetooth
-- Make sure the `app.json` is according the instructions:
-```json
-name:
-version:
-icon:
-android: {
-	"package": "com.example.planty"
-}
-```
-- Run `$ exp detach` (make sure to uninstall the app from the device if it was installed before;
-- Do (re)start the device
-- Since the project is detached, run `$ cd android && sh run.sh` (which executes ./gradlew installDevDebug)
-- Run `$ exp start` in one terminal and `$ exp android` in another terminal.
-
 
 ## Google Authentication
 - In console.developers.google.com, choose at the top the correct app (already added there via creation in firebase). Choose create credentials > OAuth > Android > Run in the project 'openssl rand -base64 32 | openssl sha1 -c', use 'host.exp.exponent' as packagename, and the result, give it to 'androidClientId'.
 - npm install --save-dev babel-preset-expo and add to .babelrc
 - import Expo from 'expo'; Expo.Google.logInAsync(options);
 
+## Bluetooth
 
 ### Common problems
 - when loading firebase while using react-native, you might get the error "undefined self.fetch". This problem is in the fetch module, and can be solved by opening the from the Dev menu on the device the Remote JS debugger

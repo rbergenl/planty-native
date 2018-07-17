@@ -9,8 +9,7 @@
 ## Node React-Native Project
 - Run `$ npm install -g yarn react-native-cli`
 - Run `$ react-native init PlantyNative` (if it is not working, run with the flag `--version="0.55.4"` see npm react-native for latest version, and if it does not work, revert to an older version)
-- Rename the created folder to `planty-native`
-- Modify `package.json` name to `planty-native`
+- Rename the created folder to `planty-native` and modify `package.json` name to `planty-native`
 - Run `$ git init` then `$ git remote add origin https://github.com/rbergenl/planty-native.git` and `$ git checkout -b develop`
 - Run `$ git add .`, then `$ git pull`, then `$ git commit -m "initial commit"` and `$  git push --set-upstream origin develop`
 - To serve, start the Virtual Device in Genymotion. And in Android Studio, import the `android` folder, let it build (do not upgrade Gradle), via the 'terminal' tab run `$ npm start`, then press the play button and select the device.

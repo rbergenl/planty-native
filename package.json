@@ -7,8 +7,11 @@
     "test": "jest"
   },
   "dependencies": {
+    "atob": "^2.1.1",
+    "base-64": "^0.1.0",
     "react": "16.3.1",
-    "react-native": "0.55.4"
+    "react-native": "0.55.4",
+    "react-native-ble-plx": "^0.9.2"
   },
   "devDependencies": {
     "babel-jest": "23.4.0",

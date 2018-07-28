@@ -5,7 +5,7 @@
 - Have NodeJS v8 installed
 - Have Android Studio installed (see React Native getting started for which SDK items should be selected)
 - Have Genymotion with VirtualBox installed, and a Virtual Device created (using this tool to avoid Android Studio emulator problems, see troubleshooting)
-
+- Or have VirtualBox installed and an Android ISO downloaded from http://www.android-x86.org/
 ## Node React-Native Project
 - Run `$ npm install -g yarn react-native-cli`
 - Run `$ react-native init PlantyNative` (if it is not working, run with the flag `--version="0.55.4"` see npm react-native for latest version, and if it does not work, revert to an older version)
@@ -20,6 +20,9 @@
 - import Expo from 'expo'; Expo.Google.logInAsync(options);
 
 ## Bluetooth
+- adb reverse tcp:8081 tcp:8081 (to connect app to JS development server)
+- adb shell input keyevent KEYCODE_MENU (to reload)
+- react-native log-android (to view console.logs in the native app)
 
 ### Troubleshooting
 - when loading firebase while using react-native, you might get the error "undefined self.fetch". This problem is in the fetch module, and can be solved by opening the from the Dev menu on the device the Remote JS debugger

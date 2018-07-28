@@ -6,7 +6,7 @@
 
 ## React Native Google Authentication
 - https://www.codementor.io/microsem31/react-native-google-and-facebook-authentication-cohpznykf
--
+- https://github.com/react-native-community/react-native-google-signin/blob/master/android-guide.md
 
 ## Detach Expo
 https://docs.expo.io/versions/latest/expokit/detach

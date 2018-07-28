@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "76561713672",
+    "firebase_url": "https://planty-37d9f.firebaseio.com",
+    "project_id": "planty-37d9f",
+    "storage_bucket": "planty-37d9f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:76561713672:android:76e429f943d9f8eb",
+        "android_client_info": {
+          "package_name": "com.plantynative"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "76561713672-t8vip076eot4bsdrbsoejikmti7ra49p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.plantynative",
+            "certificate_hash": "a177d0965dd3f3483113562015b99a470a43c940"
+          }
+        },
+        {
+          "client_id": "76561713672-ldo9v3eel2fk1k1vivtou7eutphktg3u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOIRhATAeWuIPEIgI2niNmGioD6JaO9Lk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "76561713672-ldo9v3eel2fk1k1vivtou7eutphktg3u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

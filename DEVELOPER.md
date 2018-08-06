@@ -28,7 +28,7 @@
 - Follow this guide: https://github.com/react-native-community/react-native-google-signin/blob/master/android-guide.md
 - Go to the folder `<user>/.android` and run the command `keytool -exportcert -list -v \ -alias androiddebugkey -keystore debug.keystore` (https://developers.google.com/android/guides/client-auth).
 - In console.firebase.com select 'add android app' and copy/paste SHA-1 key from the terminal to the respective field.
-- Download the `google-services.json` file and place it to the folder `./android/app`
+- Download the `google-services.json` file and place it to the folder `./android/app` (also add it to `.gitignore` since the file contains your API key)
 - Add to `project/build.gradle` the dependency `classpath 'com.google.gms:google-services:4.0.1'` (version 4.0.0 gave a nullpointer on method get())
 - Add to `settings.gradle` the lines:
 ```javascript

@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "adb-proxy": "adb reverse tcp:8081 tcp:8081",
+    "adb-menu": "adb shell input keyevent KEYCODE_MENU",
     "test": "jest"
   },
   "dependencies": {

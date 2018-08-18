@@ -47,6 +47,12 @@ project(':react-native-google-signin').projectDir = new File(rootProject.project
 - characteristic 'notify' to let the peripheral send its 'registered device number'. (the app can use this register the device for IoT).
 - characteristic 'write' to let the peripheral receive SSDN and Credentials to write to its WiFi configuration.
 
+Have installed: bluetooth-hci-socket
+(en before that have Python installed;
+and before that have VisualStudio Express/Community installed)
+And as admin run "npm install --global --production windows-build-tools".
+Then Noble or Bleno.
+
 ### Troubleshooting
 - Using JS Debugging: when in the app; open the menu > dev settings > server and port > localhost:8081. Then in Chrome go to `chrome://extensions/` to disable all extensions (cause they might give errors). Close the browser. And on the device then enable menu > js debugging
 - when loading firebase while using react-native, you might get the error "undefined self.fetch". This problem is in the fetch module, and can be solved by opening the from the Dev menu on the device the Remote JS debugger

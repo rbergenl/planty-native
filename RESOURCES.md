@@ -2,6 +2,7 @@
 
 ## React Navigation
 - https://reactnavigation.org/docs/en/getting-started.html
+- https://medium.com/async-la/react-navigation-stacks-tabs-and-drawers-oh-my-92edd606e4db
 
 ## Android
 - https://www.howtogeek.com/164570/how-to-install-android-in-virtualbox/

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-native';
 import {
   StyleSheet,
   Text,
@@ -41,18 +40,22 @@ const mapStateToProps = state => ({
 
 class Landing extends React.Component {
 
+    static navigationOptions = {
+      title: 'Landing',
+    };
+
    go() {
-     history.push('/login')
    }
     render() {
-        const { history } = this.props;
-console.log(history)
         return (
           <View>
             <Text>Landing Page</Text>
-            <TouchableHighlight style={styles.btn} underlayColor='#f0f4f7' onPress={this.go}>
+
+
+            <TouchableHighlight style={styles.btn} underlayColor='#f0f4f7' onPress={() => this.props.navigation.navigate('Login')}>
               <Text>Log in</Text>
             </TouchableHighlight>
+
             <TouchableHighlight style={styles.btn} underlayColor='#f0f4f7' onPress={ this.go}>
               <Text>Register</Text>
             </TouchableHighlight>
@@ -64,4 +67,4 @@ console.log(history)
     }
 };
 
-export default withRouter(connect(mapStateToProps, { })( Landing ));
+export default connect(mapStateToProps, { })( Landing );

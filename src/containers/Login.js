@@ -64,6 +64,9 @@ const mapStateToProps = state => ({
 
 class Login extends Component {
 
+  static navigationOptions = {
+    title: 'Login',
+  };
 //  const { history } = this.props;
 
   componentDidMount() {
@@ -105,7 +108,7 @@ class Login extends Component {
     fakeAuth.authenticate(() => {
     //  this.setState({ redirectToReferrer: true })
     })
-    history.push('/landing')
+  //  history.push('/landing')
   }
 
 

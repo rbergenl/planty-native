@@ -20,7 +20,11 @@
 - To view the logs from the android device, open a terminal and run `$ react-native log-android`
 
 ## The App Shell and Routing
-- Run `$ npm install --save react-router-native react-redux redux redux-thunk`.
+- Run `$ npm install --save react-navigation`
+
+## Remember state
+- Run `$ npm install --save react-redux redux redux-thunk`.
+-
 
 
 ## Google Authentication
@@ -62,3 +66,4 @@ Then Noble or Bleno.
 - If using Real Device via USB; then install via SDK Manager > SDK Tools the Google USB Driver
 - If error "Emulator: glClear:466 GL err 0x502", then do manual install as admin via `Android\sdk\extras\intel\hardware_accelerated_execution_manager`
 - If with installing 'HAXM' you get the error 'windows requires a digitally signed driver'; then run Windows security updated; or download haxm v7.1.0 from https://github.com/intel/haxm/releases
+- if JS Debugging says "connecting to remote debugger".. open the browser already at debugger url; and restart the app.

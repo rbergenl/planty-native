@@ -1,101 +1,121 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Route, Switch, Redirect, withRouter } from 'react-router-native';
-import { connect } from 'react-redux';
-
+import React from 'react';
 import {
+  ActivityIndicator,
+  AsyncStorage,
+  Button,
+  StatusBar,
   StyleSheet,
-  Text,
-  View
-} from 'react-native'
+  View,
+} from 'react-native';
+import { createStackNavigator, createSwitchNavigator } from 'react-navigation';
 
-import Landing from './Landing';
-import Login from './Login';
-import Register from './Register';
-import App from './App';
-
-//import { loggedInStatusChanged, loginUser } from '../actions/authActions';
-//import Config from '../config';
-
-const styles = StyleSheet.create({
-  container: {
-    marginTop: 25,
-    padding: 10,
-  },
-  header: {
-    fontSize: 20,
-  },
-  nav: {
-    flexDirection: 'row',
-    justifyContent: 'space-around'
-  },
-  navItem: {
-    flex: 1,
-    alignItems: 'center',
-    padding: 10,
-  },
-  btn: {
-    width: 200,
-    backgroundColor: '#E94949',
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 10,
-    marginTop: 10,
-  }
-});
-
-const mapStateToProps = state => (
-  { loggedIn: state.auth.loggedIn }
-);
-
-class Root extends Component {
-
-  static propTypes = {
-    loggedIn: PropTypes.bool.isRequired
-    //loggedInStatusChanged: PropTypes.func.isRequired
-  }
-
-  componentWillMount() {
-    this.validateUserSession();
-  }
-
-  // Check browser sessionStorage to check logged in status
-  validateUserSession() {
-  //  if (sessionStorage.getItem('isLoggedIn') === 'true') {
-    //  this.props.loggedInStatusChanged(true);
-  //  } else {
-    //  this.props.loggedInStatusChanged(false);
-  //  }
-  }
+class SignInScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Please sign in',
+  };
 
   render() {
-    const { loggedIn } = this.props;
-    const { history } = this.props;
-console.log(history)
-
     return (
       <View style={styles.container}>
-        <Switch>
-          <Route
-            path="/landing"
-            exact
-            render={() => {return loggedIn === true ? (<Redirect to={{pathname: '/'}} />) : (<Landing />)}}
-          />
-          <Route
-            path="/login"
-            render={() => {return <Login />}}
-          />
-          <Route
-            path="/register"
-            exact
-            render={() => {return <h1>Register here</h1>}}
-          />
-          <Route path="/" render={() => {return loggedIn === false ? (<Redirect to={{pathname: '/landing'}} />) : (<App />)}} />
-        </Switch>
+        <Button title="Sign in!" onPress={this._signInAsync} />
+      </View>
+    );
+  }
+
+  _signInAsync = async () => {
+    await AsyncStorage.setItem('userToken', 'abc');
+    this.props.navigation.navigate('App');
+  };
+}
+
+class HomeScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Welcome to the app!',
+  };
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <Button title="Show me more of the app" onPress={this._showMoreApp} />
+        <Button title="Actually, sign me out :)" onPress={this._signOutAsync} />
+      </View>
+    );
+  }
+
+  _showMoreApp = () => {
+    this.props.navigation.navigate('Other');
+  };
+
+  _signOutAsync = async () => {
+    await AsyncStorage.clear();
+    this.props.navigation.navigate('Auth');
+  };
+}
+
+class OtherScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Lots of features here',
+  };
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <Button title="I'm done, sign me out" onPress={this._signOutAsync} />
+        <StatusBar barStyle="default" />
+      </View>
+    );
+  }
+
+  _signOutAsync = async () => {
+    await AsyncStorage.clear();
+    this.props.navigation.navigate('Auth');
+  };
+}
+
+class AuthLoadingScreen extends React.Component {
+  constructor() {
+    super();
+    this._bootstrapAsync();
+  }
+
+  // Fetch the token from storage then navigate to our appropriate place
+  _bootstrapAsync = async () => {
+    const userToken = await AsyncStorage.getItem('userToken');
+
+    // This will switch to the App screen or Auth screen and this loading
+    // screen will be unmounted and thrown away.
+    this.props.navigation.navigate(userToken ? 'App' : 'Auth');
+  };
+
+  // Render any loading content that you like here
+  render() {
+    return (
+      <View style={styles.container}>
+        <ActivityIndicator />
+        <StatusBar barStyle="default" />
       </View>
     );
   }
 }
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
 
-export default withRouter(connect(mapStateToProps, { })( Root ));
+const AppStack = createStackNavigator({ Home: HomeScreen, Other: OtherScreen });
+const AuthStack = createStackNavigator({ SignIn: SignInScreen });
+
+export default createSwitchNavigator(
+  {
+    AuthLoading: AuthLoadingScreen,
+    App: AppStack,
+    Auth: AuthStack,
+  },
+  {
+    initialRouteName: 'AuthLoading',
+  }
+);

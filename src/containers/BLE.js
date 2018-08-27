@@ -58,7 +58,7 @@ export default class SensorsComponent extends Component {
   scanAndConnect() {
     this.manager.startDeviceScan(null,
                                  null, (error, device) => {
-      this.info("Scanning...")
+      this.info("Scanning... (make sure the peripheral is enabled)")
 
 	  if (device) {
 		console.log(device.name)

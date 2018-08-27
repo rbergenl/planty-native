@@ -8,6 +8,7 @@ import {
   View,
 } from 'react-native';
 import { GoogleSignin } from 'react-native-google-signin';
+import SensorsComponent from './BLE';
 
 const styles = StyleSheet.create({
   container: {
@@ -27,6 +28,7 @@ class HomeScreen extends React.Component {
       <View style={styles.container}>
         <Button title="Show me more of the app" onPress={this._showMoreApp} />
         <Button title="Actually, sign me out :)" onPress={this._signOutAsync} />
+        <SensorsComponent />
       </View>
     );
   }

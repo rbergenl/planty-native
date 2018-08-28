@@ -3,6 +3,7 @@
 ## React Navigation
 - https://reactnavigation.org/docs/en/getting-started.html
 - https://medium.com/async-la/react-navigation-stacks-tabs-and-drawers-oh-my-92edd606e4db
+- https://github.com/ipeedy/react-native-boilerplate
 
 ## Android
 - https://www.howtogeek.com/164570/how-to-install-android-in-virtualbox/
@@ -22,3 +23,6 @@ https://docs.expo.io/versions/latest/expokit/expokit.html
 - https://blog.expo.io/so-you-want-to-build-a-bluetooth-app-with-react-native-and-expo-6ea6a31a151d
 - https://askubuntu.com/questions/963424/cant-access-in-built-bluetooth-for-windows-in-virtual-box
 - https://codeburst.io/getting-started-with-bluetooth-low-energy-on-ios-ada3090fc9cc
+
+## Database
+- https://firebase.googleblog.com/2016/01/the-beginners-guide-to-react-native-and_84.html

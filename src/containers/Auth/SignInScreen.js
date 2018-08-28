@@ -32,7 +32,7 @@ class SignInScreen extends React.Component {
   };
 
   static navigationOptions = {
-    title: 'Please sign in',
+    header: null
   };
 
   render() {

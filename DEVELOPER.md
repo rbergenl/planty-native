@@ -47,15 +47,16 @@ project(':react-native-google-signin').projectDir = new File(rootProject.project
 
 ## Bluetooth
 
-### Configure the peripheral
-- characteristic 'notify' to let the peripheral send its 'registered device number'. (the app can use this register the device for IoT).
-- characteristic 'write' to let the peripheral receive SSDN and Credentials to write to its WiFi configuration.
-
+- Follow the guide on 'https://www.polidea.com/blog/ReactNative_and_Bluetooth_to_An_Other_level/'
 Have installed: bluetooth-hci-socket
 (en before that have Python installed;
 and before that have VisualStudio Express/Community installed)
 And as admin run "npm install --global --production windows-build-tools".
 Then Noble or Bleno.
+
+### Configure the peripheral
+- characteristic 'notify' to let the peripheral send its 'registered device number'. (the app can use this register the device for IoT).
+- characteristic 'write' to let the peripheral receive SSDN and Credentials to write to its WiFi configuration.
 
 ### Troubleshooting
 - Using JS Debugging: when in the app; open the menu > dev settings > server and port > localhost:8081. Then in Chrome go to `chrome://extensions/` to disable all extensions (cause they might give errors). Close the browser. And on the device then enable menu > js debugging
